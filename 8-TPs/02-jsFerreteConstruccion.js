@@ -75,8 +75,8 @@ function Materiales ()
 
     Contrapiso = LargoTerreno * AnchoTerreno;
 
-    BolsasdeCemento = (Contrapiso * 2) / 1;
-    BolsasdeCal = (Contrapiso * 3) / 1;
+    BolsasdeCemento = Contrapiso * 2 ;
+    BolsasdeCal = Contrapiso * 3 ;
 
     alert("La cantidad de bolsas de cemento para un contrapiso de " +Contrapiso+ " m2 son " +BolsasdeCemento + " ,mientras que las de cal van a ser "+BolsasdeCal+ ".");
     
