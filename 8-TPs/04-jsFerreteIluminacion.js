@@ -8,7 +8,114 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+
 function CalcularPrecio () 
 {
- 	
+    
+    var cantidadLamparas;
+    var valorLamparas;
+    var ingresosbrutos;
+
+    cantidadLamparas = txtIdCantidad.value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+
+    MarcaEmpresa = document.getElementById("Marca").value;
+
+    valorLamparas = 35;
+
+////////////////////////////////////////////////////////////////////////////////
+
+    if(cantidadLamparas > 5) // OPCION A - Si compra 6 o mas lamparitas.
+    {
+        precioLamparas = (valorLamparas * cantidadLamparas) * 0.5;
+        
+        txtIdprecioDescuento.value = precioLamparas;
+
+        if(precioLamparas > 120)
+        {
+            ingresosbrutos = ((valorLamparas * cantidadLamparas) - precioLamparas ) * 0.1;
+
+            alert("El IIBB (impuesto de ingresos brutos) a pagar son $"+ingresosbrutos);
+        } 
+    }
+
+///////////////////////////////////////////////////////////////////////////////
+
+    if(cantidadLamparas == 5) //OPCION B - Si compra 5 lamparitas.
+    {
+        if(MarcaEmpresa == "ArgentinaLuz")
+        {
+            precioLamparas = (valorLamparas * cantidadLamparas) * 0.4;
+
+            txtIdprecioDescuento.value = precioLamparas;
+
+
+        }
+        if(MarcaEmpresa != "ArgentinaLuz")
+        {
+            precioLamparas = (valorLamparas * cantidadLamparas) * 0.3;
+
+            txtIdprecioDescuento.value = precioLamparas;
+        }
+    }
+//////////////////////////////////////////////////////////////////////////////
+
+    if(cantidadLamparas == 4) //OPCION C - Si compra 4 lamparitas.
+    {
+        if(MarcaEmpresa == "ArgentinaLuz")
+        {
+            precioLamparas = (valorLamparas * cantidadLamparas) * 0.25;
+
+            txtIdprecioDescuento.value = precioLamparas;
+        }
+        if(MarcaEmpresa == "FelipeLamparas")
+        {
+            precioLamparas = (valorLamparas * cantidadLamparas) * 0.25;
+
+            txtIdprecioDescuento.value = precioLamparas;
+        }
+        if(MarcaEmpresa != "ArgentinaLuz")
+        {
+            if(MarcaEmpresa != "FelipeLamparas")
+            {
+                precioLamparas = (valorLamparas * cantidadLamparas) * 0.2;
+
+                txtIdprecioDescuento.value = precioLamparas;
+            }
+        }
+
+    }
+/////////////////////////////////////////////////////////////////////////////
+
+    if(cantidadLamparas == 3) // Si compra 3 lamparitas.
+    {
+        if(MarcaEmpresa == "ArgentinaLuz")
+        {
+            precioLamparas = (valorLamparas * cantidadLamparas) * 0.15;
+
+            txtIdprecioDescuento.value = precioLamparas;
+        }
+        if(MarcaEmpresa == "FelipeLamparas")
+        {
+            precioLamparas = (valorLamparas * cantidadLamparas) * 0.1;
+
+            txtIdprecioDescuento.value = precioLamparas;
+        }
+
+        if(MarcaEmpresa != "ArgentinaLuz")
+        {
+            if(MarcaEmpresa != "FelipeLamparas")
+            {
+                precioLamparas = (valorLamparas * cantidadLamparas) * 0.05;
+
+                txtIdprecioDescuento.value = precioLamparas;
+            }
+        }
+
+    }
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+
 }
